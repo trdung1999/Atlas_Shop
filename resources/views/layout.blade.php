@@ -86,11 +86,11 @@
                     <div class="col-sm-8">
                         <div class="shop-menu pull-right">
                             <ul class="nav navbar-nav">
-                                <li><a href="#"><i class="fa fa-user"></i>Tài Khoản</a></li>
-                                <li><a href="#"><i class="fa fa-star"></i> Danh Sách</a></li>
-                                <li><a href="checkout.html"><i class="fa fa-crosshairs"></i>Phương Thức Thanh Toán</a></li>
+                                <li><a href="{{ URL::to('/login_checkout') }}"><i class="fa fa-user"></i>Tài Khoản</a></li>
+                                <li><a href="#"><i class="fa fa-star"></i>Yêu thích</a></li>
+                                <li><a href="{{ URL::to('/checkout') }}"><i class="fa fa-crosshairs"></i>Thanh Toán</a></li>
                                 <li><a href="{{ URL::to('/show_cart') }}"><i class="fa fa-shopping-cart"></i> Giở Hàng</a></li>
-                                <li><a href="login.html"><i class="fa fa-lock"></i> Đăng Nhập</a></li>
+                                <li><a href="{{ URL::to('/login_checkout') }}"><i class="fa fa-lock"></i> Đăng Nhập</a></li>
                             </ul>
                         </div>
                     </div>

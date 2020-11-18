@@ -70,3 +70,6 @@ Route::post('/add_cart', 'CartController@add');
 Route::get('/show_cart', 'CartController@show');
 Route::get('/delete_cart/{rowId}', 'CartController@delete');
 Route::post('/update', 'CartController@update');
+
+//Checkout
+Route::get('/login_checkout', 'CheckoutController@login');

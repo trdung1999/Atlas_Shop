@@ -72,7 +72,7 @@
 				<h3>Phương thức thanh toán</h3>
 			</div>
 			<div class="row">
-				<div class="col-sm-6">
+				<!-- <div class="col-sm-6">
 					<div class="chose_area">
 						<ul class="user_option">
 							<li>
@@ -125,8 +125,8 @@
 						<a class="btn btn-default update" href="">Get Quotes</a>
 						<a class="btn btn-default check_out" href="">Continue</a>
 					</div>
-				</div>
-				<div class="col-sm-6">
+				</div> -->
+				<div class="col-sm-10">
 					<div class="total_area">
 						<ul>
 							<li>Tổng <span>{{ Cart::total().'Đ' }}</span></li>
@@ -134,8 +134,8 @@
 							<li>Phí vận chuyển <span>Free</span></li>
 							<li>Thành tiền <span>{{ Cart::total().'Đ' }}</span></li>
 						</ul>
-							<a class="btn btn-default update" href="">Mua hàng</a>
-							<a class="btn btn-default check_out" href="">Kiểm tra</a>
+							<!-- <a class="btn btn-default update" href="">Mua hàng</a> -->
+							<a class="btn btn-default check_out" href="{{ URL::to('/login_checkout')}}">Thanh toán</a>
 					</div>
 				</div>
 			</div>
