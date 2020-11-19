@@ -73,3 +73,8 @@ Route::post('/update', 'CartController@update');
 
 //Checkout
 Route::get('/login_checkout', 'CheckoutController@login');
+Route::get('/logout_checkout', 'CheckoutController@logout');
+Route::post('login_customer', 'CheckoutController@login_customer');
+Route::post('/add_customer', 'CheckoutController@add');
+Route::get('/checkout', 'CheckoutController@checkout');
+Route::post('/save_checkout', 'CheckoutController@save');

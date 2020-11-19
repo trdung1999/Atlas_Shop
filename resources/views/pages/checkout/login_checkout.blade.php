@@ -6,9 +6,10 @@
 				<div class="col-sm-4 col-sm-offset-1">
 					<div class="login-form"><!--login form-->
 						<h2>Đăng nhập tài khoản</h2>
-						<form action="#">
-							<input type="text" name="user_email" placeholder="Tên tài khoản" />
-							<input type="password" name="user_password" placeholder="Mật khẩu" />
+						<form action="{{ URL::to('/login_customer') }}" method="POST">
+							{{ csrf_field() }}
+							<input type="text" name="c_email" placeholder="Tên tài khoản" />
+							<input type="password" name="c_password" placeholder="Mật khẩu" />
 							<span>
 								<input type="checkbox" class="checkbox"> 
 								Nhớ mật khẩu
@@ -23,10 +24,12 @@
 				<div class="col-sm-4">
 					<div class="signup-form"><!--sign up form-->
 						<h2>Tạo tài khoản mới</h2>
-						<form action="#">
-							<input type="text" placeholder="Tên tài khoản"/>
-							<input type="email" placeholder="Địa chỉ email"/>
-							<input type="password" placeholder="Mật khẩu"/>
+						<form action="{{URL::to('/add_customer') }}" method="POST">
+							{{ csrf_field() }}
+							<input type="text" name="customer_name" placeholder="Tên tài khoản"/>
+							<input type="email" name="customer_email" placeholder="Địa chỉ email"/>
+							<input type="password" name="customer_password" placeholder="Mật khẩu"/>
+							<input type="text" name="customer_phone" placeholder="Số điện thoại"/>
 							<button type="submit" class="btn btn-default">Đăng ký</button>
 						</form>
 					</div><!--/sign up form-->
