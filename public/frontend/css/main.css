@@ -2531,4 +2531,11 @@ h2.title {
   color: #FE980F;
 }
 
-
+.search {
+    color: #c2c2c1;
+    font-size: 20px; 
+    margin-left: 3px; 
+}
+.search:hover {
+    color: #fe980f; 
+}

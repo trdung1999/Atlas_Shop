@@ -9,7 +9,7 @@
                                     <div class="productinfo text-center">
                                         <img src="{{ URL::to('public/upload/product/'.$pro->product_image)}}" alt="" />
                                         <h2>{{ number_format($pro->product_price).'Đ' }}</h2>
-                                        <p>{{ number_format($pro->product_price).'Đ' }}</p>
+                                        <p>{{ $pro->product_name }}</p>
                                         <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</a>
                                     </div>
                                     <div class="product-overlay">

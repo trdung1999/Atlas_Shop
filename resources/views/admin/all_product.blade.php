@@ -58,7 +58,7 @@
             <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
             <td>{{ $pro->product_name }}</td>
             <td>{{ number_format($pro->product_price).'Đ' }}</td>
-            <td><img src="{{ asset('public/upload/product/'.$pro->product_image) }}" alt=""></td>
+            <td><img src="{{ asset('public/upload/product/'.$pro->product_image) }}" width="180" alt=""></td>
             <td>{{ $pro->category_name }}</td>
             <td>{{ $pro->brand_name }}</td>
             <td><span class="text-ellipsis"><?php  

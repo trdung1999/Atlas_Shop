@@ -13,6 +13,7 @@
 // fontend
 Route::get('/','HomeController@index');
 Route::get('/home', 'HomeController@index');
+Route::post('search', 'HomeController@search');
 
 //Danh mục sản phẩm
 Route::get('/danh_muc/{category_id}', 'CategoryProduct@show_category_home');

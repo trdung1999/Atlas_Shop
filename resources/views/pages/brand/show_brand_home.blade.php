@@ -16,7 +16,7 @@
                                     </div>
                                     <div class="product-overlay">
                                         <div class="overlay-content">
-                                            <h2>{{ $pro->product_price }}</h2>
+                                            <h2>{{ number_format($pro->product_price).'Đ' }}</h2>
                                             <p>{{ $pro->product_name }}</p>
                                             <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</a>
                                         </div>

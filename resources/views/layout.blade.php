@@ -6,13 +6,15 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Atlas - Standing Desk</title>
-    <link href="{{asset('public/fontend/css/bootstrap.min.css')}}" rel="stylesheet">
-    <link href="{{asset('public/fontend/css/font-awesome.min.css')}}" rel="stylesheet">
-    <link href="{{asset('public/fontend/css/prettyPhoto.css')}}" rel="stylesheet">
-    <link href="{{asset('public/fontend/css/price-range.css')}}" rel="stylesheet">
-    <link href="{{asset('public/fontend/css/animate.css')}}" rel="stylesheet">
-    <link href="{{asset('public/fontend/css/main.css')}}" rel="stylesheet">
-    <link href="{{asset('public/fontend/css/responsive.css')}}" rel="stylesheet">
+    <link href="{{asset('public/frontend/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('public/frontend/css/font-awesome.min.css')}}" rel="stylesheet">
+    <link href="{{asset('public/frontend/css/prettyPhoto.css')}}" rel="stylesheet">
+    <link href="{{asset('public/frontend/css/price-range.css')}}" rel="stylesheet">
+    <link href="{{asset('public/frontend/css/animate.css')}}" rel="stylesheet">
+    <link href="{{asset('public/frontend/css/main.css')}}" rel="stylesheet">
+    <link href="{{asset('public/frontend/css/all.css')}}" rel="stylesheet">
+    <link href="{{asset('public/frontend/css/responsive.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
@@ -57,31 +59,8 @@
                 <div class="row">
                     <div class="col-sm-4">
                         <div class="logo pull-left">
-                            <a href="index.html"><img src="{{ asset('public/fontend/images/logo.png')}}" alt="" /></a>
+                            <a href="{{ url('/home') }}"><img width="150" src="{{ asset('public/frontend/img/logo.png')}}" alt="" /></a>
                         </div>
-                        <!-- <div class="btn-group pull-right">
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
-                                    Khu Vực
-                                    <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Miền Nam</a></li>
-                                    <li><a href="#">Miền Bắc</a></li>
-                                </ul>
-                            </div>
-                            
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
-                                    Tiền tệ
-                                    <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">$ - USD</a></li>
-                                    <li><a href="#">đ - VND</a></li>
-                                </ul>
-                            </div>
-                        </div> -->
                     </div>
                     <div class="col-sm-8">
                         <div class="shop-menu pull-right">
@@ -122,7 +101,7 @@
         <div class="header-bottom"><!--header-bottom-->
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-9">
+                    <div class="col-sm-8">
                         <div class="navbar-header">
                             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                                 <span class="sr-only">Toggle navigation</span>
@@ -139,21 +118,25 @@
                                         <li><a href="shop.html">Sản Phẩm</a></li>
                                         <li><a href="product-details.html">Chi Tiết Sản Phẩm</a></li> 
                                         <li><a href="checkout.html">Phương Thức Thanh Toán</a></li> 
-                                        <li><a href="cart.html">Giỏ Hàng</a></li> 
+                                        <li><a href="{{ URL::to('/show_cart') }}">Giỏ Hàng</a></li> 
                                         <li><a href="login.html">Đăng Nhập</a></li> 
                                     </ul>
                                 </li> 
                                 <li class="dropdown"><a href="#">Tin Tức<i class="fa fa-angle-down"></i></a>                                    
                                 </li> 
-                                <li><a href="404.html">Giỏ Hàng</a></li>
+                                <li><a href="{{ URL::to('/show_cart') }}">Giỏ Hàng</a></li>
                                 <li><a href="contact-us.html">Liên Lạc</a></li>
                             </ul>
                         </div>
                     </div>
-                    <div class="col-sm-3">
-                        <div class="search_box pull-right">
-                            <input type="text" placeholder="Search"/>
+                    <div class="col-sm-4">
+                        <form action="{{ url('/search') }}" method="POST">
+                            {{ csrf_field()}}
+                            <div class="search_box pull-right">
+                            <input type="text" name="keywords" placeholder="Tìm kiếm sản phẩm"/>
+                            <input type="submit" style="margin-top: 0;color:black;" class="btn btn-primary btn-sm" value="Tìm kiếm">
                         </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -174,39 +157,39 @@
                         <div class="carousel-inner">
                             <div class="item active">
                                 <div class="col-sm-6">
-                                    <h1><span>ATLAS</span>-SHOPPER</h1>
+                                    <h1><span>ATLAS</span></h1>
                                     <h2>Thoải mái - Tiện nghi - Chất lượng</h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                    <button type="button" class="btn btn-default get">Get it now</button>
+                                    <p>Cung cấp bàn đứng hàng đầu Việt Nam</p>
+                                    <button type="button" class="btn btn-default get">Mua ngay</button>
                                 </div>
                                 <div class="col-sm-6">
-                                    <img src="{{ asset('public/fontend/img/sd2.jpg')}}" class="girl img-responsive" alt="" />
-                                    <img src="{{ asset('public/fontend/img/pricing.png')}}"  class="pricing" alt="" />
+                                    <img src="{{ asset('public/frontend/img/sd2.jpg')}}" class="girl img-responsive" alt="" />
+                                    <img src="{{ asset('public/frontend/img/pricing.png')}}"  class="pricing" alt="" />
                                 </div>
                             </div>
                             <div class="item">
                                 <div class="col-sm-6">
-                                    <h1><span>ATLAS</span>-SHOPPER</h1>
+                                    <h1><span>ATLAS</span></h1>
                                     <h2>Thoải mái - Tiện nghi - Chất lượng</h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                    <button type="button" class="btn btn-default get">Get it now</button>
+                                    <p>Đưa ra những khái niệm mới</p>
+                                    <button type="button" class="btn btn-default get">Mua ngay</button>
                                 </div>
                                 <div class="col-sm-6">
-                                    <img src="{{ asset('public/fontend/img/sd1.jpg')}}" class="girl img-responsive" alt="" />
-                                    <img src="{{ asset('public/fontend/img/pricing.png')}}"  class="pricing" alt="" />
+                                    <img src="{{ asset('public/frontend/img/sd1.jpg')}}" class="girl img-responsive" alt="" />
+                                    <img src="{{ asset('public/frontend/img/pricing.png')}}"  class="pricing" alt="" />
                                 </div>
                             </div>
                             
                             <div class="item">
                                 <div class="col-sm-6">
-                                    <h1><span>ATLAS</span>-SHOPPER</h1>
+                                    <h1><span>ATLAS</span></h1>
                                     <h2>Thoải mái - Tiện nghi - Chất lượng</h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                    <button type="button" class="btn btn-default get">Get it now</button>
+                                    <p>Nâng cao chất lượng cuộc sống</p>
+                                    <button type="button" class="btn btn-default get">Mua ngay</button>
                                 </div>
                                 <div class="col-sm-6">
-                                    <img src="{{ asset('public/fontend/img/sd3.jpg')}}" class="girl img-responsive" alt="" />
-                                    <img src="{{ asset('public/fontend/img/pricing.png')}}" class="pricing" alt="" />
+                                    <img src="{{ asset('public/frontend/img/sd3.jpg')}}" class="girl img-responsive" alt="" />
+                                    <img src="{{ asset('public/frontend/img/pricing.png')}}" class="pricing" alt="" />
                                 </div>
                             </div>
                             
@@ -224,7 +207,7 @@
             </div>
         </div>
     </section><!--/slider-->
-    
+
     <section>
         <div class="container">
             <div class="row">
@@ -261,7 +244,7 @@
                         </div><!--/price-range--> --}}
                         {{-- 
                         <div class="shipping text-center"><!--shipping-->
-                            <img src="{{('public/fontend/img/shipping.jpg')}}" alt="" />
+                            <img src="{{('public/frontend/img/shipping.jpg')}}" alt="" />
                         </div><!--/shipping--> --}}
                     
                     </div>
@@ -282,8 +265,9 @@
                 <div class="row">
                     <div class="col-sm-2">
                         <div class="companyinfo">
-                            <h2><span>Atlas</span>-Shop</h2>
+                            <h2><span>Atlas</span></h2>
                             <p>Bàn đứng - cung cấp sản phẩm hàng đầu Việt Nam</p>
+                            <b><p>Tự hào kết hợp với các đối tác</p></b>
                         </div>
                     </div>
                     <div class="col-sm-7">
@@ -291,12 +275,12 @@
                             <div class="video-gallery text-center">
                                 <a href="#">
                                     <div class="iframe-img">
-                                        <img src="{{ asset('public/fontend/img/quanh1.jpg')}}" alt="" />
+                                        <img src="{{ asset('public/frontend/img/dmx.jpg')}}" alt="" />
                                     </div>
                                     
                                 </a>
-                                <p>Phạm Quang Anh</p>
-                                <h2>Founder</h2>
+                                <!-- <p>Điện máy xanh</p> -->
+                                <h2>Điện máy xanh</h2>
                             </div>
                         </div>
                         
@@ -304,11 +288,11 @@
                             <div class="video-gallery text-center">
                                 <a href="#">
                                     <div class="iframe-img">
-                                        <img src="{{ asset('public/fontend/img/dung.jpg')}}" alt="" />
+                                        <img src="{{ asset('public/frontend/img/mega.jpg')}}" alt="" />
                                     </div>
                                     
-                                <p>Nguyễn Trung Dũng</p>
-                                <h2>Co-founder</h2>
+                                <!-- <p>Thế giới di động</p> -->
+                                <h2>Mega Market</h2>
                             </div>
                         </div>
                         
@@ -316,12 +300,12 @@
                             <div class="video-gallery text-center">
                                 <a href="#">
                                     <div class="iframe-img">
-                                        <img src="{{ asset('public/fontend/img/duong.jpg')}}" alt="" />
+                                        <img src="{{ asset('public/frontend/img/StarHome.png')}}" alt="" />
                                     </div>
                                     
                                 </a>
-                                <p>Phạm Hải Dương</p>
-                                <h2>Co-founder</h2>
+                                <!-- <p>StarHome</p> -->
+                                <h2>StarHome</h2>
                             </div>
                         </div>
                         
@@ -329,19 +313,18 @@
                             <div class="video-gallery text-center">
                                 <a href="#">
                                     <div class="iframe-img">
-                                        <img src="{{ asset('public/fontend/img/bach.jpg')}}" alt="" />
+                                        <img src="{{ asset('public/frontend/img/casara.jpg')}}" alt="" />
                                     </div>
                                     
                                 </a>
-                                <p>Nguyễn Ngọc Bách</p>
-                                <h2>under-founder</h2>
+                                <!-- <p>CARASA</p> -->
+                                <h2>CARASA</h2>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-3">
                         <div class="address">
-                            <img src="images/home/map.png" alt="" />
-                            <p>505 S Atlantic Ave Virginia Beach, VA(Virginia)</p>
+                            <img src="{{ asset('public/frontend/img/map.jpg')}}" alt="" />
                         </div>
                     </div>
                 </div>
@@ -353,59 +336,59 @@
                 <div class="row">
                     <div class="col-sm-2">
                         <div class="single-widget">
-                            <h2>Service</h2>
+                            <h2>Dịch Vụ</h2>
                             <ul class="nav nav-pills nav-stacked">
-                                <li><a href="#">Online Help</a></li>
-                                <li><a href="#">Contact Us</a></li>
-                                <li><a href="#">Order Status</a></li>
-                                <li><a href="#">Change Location</a></li>
-                                <li><a href="#">FAQ’s</a></li>
+                                <li><a href="#">Trợ giúp</a></li>
+                                <li><a href="#">Liên lạc với chúng tôi</a></li>
+                                <li><a href="#">Đặt hàng</a></li>
+                                <li><a href="#">Thay đổi địa điểm</a></li>
+                                <li><a href="#">câu hỏi FAQ</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-sm-2">
                         <div class="single-widget">
-                            <h2>Quock Shop</h2>
+                            <h2>Thành Viên</h2>
                             <ul class="nav nav-pills nav-stacked">
-                                <li><a href="#">T-Shirt</a></li>
-                                <li><a href="#">Mens</a></li>
-                                <li><a href="#">Womens</a></li>
-                                <li><a href="#">Gift Cards</a></li>
-                                <li><a href="#">Shoes</a></li>
+                                <li><a href="#">Phạm Quang Anh</a></li>
+                                <li><a href="#">Nguyễn Trung Dũng</a></li>
+                                <li><a href="#">Phạm Hải Dương</a></li>
+                                <li><a href="#">Nguyễn Ngọc Bách</a></li>
+                                <!-- <li><a href="#">Shoes</a></    li> -->
                             </ul>
                         </div>
                     </div>
                     <div class="col-sm-2">
                         <div class="single-widget">
-                            <h2>Policies</h2>
+                            <h2>Chính sách</h2>
                             <ul class="nav nav-pills nav-stacked">
-                                <li><a href="#">Terms of Use</a></li>
-                                <li><a href="#">Privecy Policy</a></li>
-                                <li><a href="#">Refund Policy</a></li>
-                                <li><a href="#">Billing System</a></li>
-                                <li><a href="#">Ticket System</a></li>
+                                <li><a href="#">Điều khoản sử dụng</a></li>
+                                <li><a href="#">Chính sách bảo mật</a></li>
+                                <li><a href="#">Chính sách hoàn lại</a></li>
+                                <li><a href="#">Hệ thống thanh toán</a></li>
+                                <!-- <li><a href="#">Hệ thống vé</a></li> -->
                             </ul>
                         </div>
                     </div>
                     <div class="col-sm-2">
                         <div class="single-widget">
-                            <h2>About Shopper</h2>
+                            <h2>Thông tin về Atlas</h2>
                             <ul class="nav nav-pills nav-stacked">
-                                <li><a href="#">Company Information</a></li>
-                                <li><a href="#">Careers</a></li>
-                                <li><a href="#">Store Location</a></li>
-                                <li><a href="#">Affillate Program</a></li>
-                                <li><a href="#">Copyright</a></li>
+                                <li><a href="#">Thông tin công ty</a></li>
+                                <li><a href="#">Nghề nghiệp</a></li>
+                                <li><a href="#">Địa điểm</a></li>
+                                <li><a href="#">Liên kết doanh nghiệp</a></li>
+                                <li><a href="#">Bản quyền</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-sm-3 col-sm-offset-1">
                         <div class="single-widget">
-                            <h2>About Shopper</h2>
+                            <h2>Thông tin về chúng tôi</h2>
                             <form action="#" class="searchform">
-                                <input type="text" placeholder="Your email address" />
-                                <button type="submit" class="btn btn-default"><i class="fa fa-arrow-circle-o-right"></i></button>
-                                <p>Get the most recent updates from <br />our site and be updated your self...</p>
+                                <input type="text" placeholder="Địa chỉ email của bạn" />
+                                <button style="margin-left: 1px;" type="submit" class="btn btn-default"><i class="fa fa-arrow-circle-o-right"></i>Gửi</button>
+                                <p>Cảm ơn bạn vì đã ghé thăm Atlas <br> Chúc bạn mua hàng vui vẻ !</p>
                             </form>
                         </div>
                     </div>
@@ -417,8 +400,8 @@
         <div class="footer-bottom">
             <div class="container">
                 <div class="row">
-                    <p class="pull-left">Copyright © 2013 E-SHOPPER Inc. All rights reserved.</p>
-                    <p class="pull-right">Designed by <span><a target="_blank" href="http://www.themeum.com">Themeum</a></span></p>
+                    <p class="pull-left">Copyright © 2020 ATLAS Inc. All rights reserved.</p>
+                    <!-- <p class="pull-right">Designed by <span><a target="_blank" href="http://www.themeum.com">Themeum</a></span></p> -->
                 </div>
             </div>
         </div>
@@ -426,12 +409,12 @@
     </footer><!--/Footer-->
     
 
-  
-    <script src="{{asset('public/fontend/js/jquery.js')}}"></script>
-    <script src="{{asset('public/fontend/js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('public/fontend/js/jquery.scrollUp.min.js')}}"></script>
-    <script src="{{asset('public/fontend/js/price-range.js')}}"></script>
-    <script src="{{asset('public/fontend/js/jquery.prettyPhoto.j')}}s"></script>
-    <script src="{{asset('public/fontend/js/main.js')}}"></script>
+    <script src="{{asset('public/frontend/js/all.js')}}"></script>
+    <script src="{{asset('public/frontend/js/jquery.js')}}"></script>
+    <script src="{{asset('public/frontend/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('public/frontend/js/jquery.scrollUp.min.js')}}"></script>
+    <script src="{{asset('public/frontend/js/price-range.js')}}"></script>
+    <script src="{{asset('public/frontend/js/jquery.prettyPhoto.j')}}s"></script>
+    <script src="{{asset('public/frontend/js/main.js')}}"></script>
 </body>
 </html>
