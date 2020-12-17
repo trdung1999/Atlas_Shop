@@ -163,7 +163,7 @@
                                     <button type="button" class="btn btn-default get">Mua ngay</button>
                                 </div>
                                 <div class="col-sm-6">
-                                    <img src="{{ asset('public/frontend/img/sd2.jpg')}}" class="girl img-responsive" alt="" />
+                                    <img src="{{ asset('public/frontend/img/Atlas 3 Advanced Black.jpg')}}" class="girl img-responsive" alt="" />
                                     <img src="{{ asset('public/frontend/img/pricing.png')}}"  class="pricing" alt="" />
                                 </div>
                             </div>
@@ -175,7 +175,7 @@
                                     <button type="button" class="btn btn-default get">Mua ngay</button>
                                 </div>
                                 <div class="col-sm-6">
-                                    <img src="{{ asset('public/frontend/img/sd1.jpg')}}" class="girl img-responsive" alt="" />
+                                    <img src="{{ asset('public/frontend/img/Atlas 3 BikeEX Black.jpg')}}" class="girl img-responsive" alt="" />
                                     <img src="{{ asset('public/frontend/img/pricing.png')}}"  class="pricing" alt="" />
                                 </div>
                             </div>
@@ -188,7 +188,7 @@
                                     <button type="button" class="btn btn-default get">Mua ngay</button>
                                 </div>
                                 <div class="col-sm-6">
-                                    <img src="{{ asset('public/frontend/img/sd3.jpg')}}" class="girl img-responsive" alt="" />
+                                    <img src="{{ asset('public/frontend/img/Atlas 3 Standard White.jpg')}}" class="girl img-responsive" alt="" />
                                     <img src="{{ asset('public/frontend/img/pricing.png')}}" class="pricing" alt="" />
                                 </div>
                             </div>
